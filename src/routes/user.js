@@ -25,7 +25,7 @@ router.get("/:id", async (req, res) => {
 
 router.post("/createAccount", async (req, res) => {
   try {
-    const user = await User.create(req.body);
+    const user = await User.create(req.body,req.body.password);
     res.send({ user: user });
   } catch (error) {
     console.log(error);
